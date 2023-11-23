@@ -29,9 +29,9 @@ public class GridLayerOptions : LayerOptions
 
     public int ZIndex { get; set; } = 1;
 
-    /// <summary>
-    /// If set, tiles will only be loaded inside the set.
-    /// </summary>
-    public Tuple<LatLng, LatLng>? Bounds { get; set; }
+        /// <summary>
+        /// If set, tiles will only be loaded inside the set.
+        /// </summary>
+        public (LatLng TopLeft, LatLng BottomRight)? Bounds { get; set; }
 
 }
