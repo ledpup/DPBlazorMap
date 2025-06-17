@@ -9,10 +9,11 @@
     <PackageTags>blazor;map;leaflet;</PackageTags>
     <RepositoryUrl>https://github.com/ledpup/DPBlazorMap</RepositoryUrl>
     <Authors>Patrick Lea</Authors>
-    <Description>DP Blaser Map is a library for Blazer, which is a wrapper on top of the Leaflet js library.</Description>
+    <Description>LP Blaser Map is a library for Blazer, which is a wrapper on top of the Leaflet js library.</Description>
     <PackageProjectUrl>https://github.com/ledpup/DPBlazorMap</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Version>1.2.1</Version>
+    <PackageId>LPBlazorMapLibrary</PackageId>
   </PropertyGroup>
 
 
