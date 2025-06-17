@@ -1,6 +1,6 @@
-# LPBlazorMap.
+# DPBlazorMap.
 
-LP Blazor Map is a fork of DP Blazor Map, a library for Blazor, which is a wrapper on top of the Leaflet js library.
+DP Blazor Map is a library for Blazor, which is a wrapper on top of the Leaflet js library.
 
 [![NuGet version (DPBlazorMapLibrary)](https://img.shields.io/nuget/v/DPBlazorMapLibrary)](https://www.nuget.org/packages/DPBlazorMapLibrary/)
 
