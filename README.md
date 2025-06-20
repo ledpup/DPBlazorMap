@@ -2,7 +2,7 @@
 
 DP Blazor Map is a library for Blazor, which is a wrapper on top of the Leaflet js library.
 
-[![NuGet version (DPBlazorMapLibrary)](https://img.shields.io/nuget/v/DPBlazorMapLibrary)](https://www.nuget.org/packages/DPBlazorMapLibrary/)
+[![NuGet version (DPBlazorMapLibrary)](https://img.shields.io/nuget/v/LPBlazorMapLibrary)](https://www.nuget.org/packages/LPBlazorMapLibrary/)
 
 The project is being created and developed in order to become the basis for creating a geoportal on Blazer.
 
