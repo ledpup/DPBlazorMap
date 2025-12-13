@@ -13,11 +13,13 @@ public class Evented : JsReferenceBase
     private const string _mouseOverJsFunction = "mouseover";
     private const string _mouseOutJsFunction = "mouseout";
     private const string _contextMenuJsFunction = "contextmenu";
+    private const string _moveEndJsFunction = "moveend";
     private const string _offJsFunction = "off";
     #endregion
 
     protected IEventedJsInterop? EventedJsInterop;
     private readonly IDictionary<string, Func<MouseEvent, Task>> MouseEvents = new Dictionary<string, Func<MouseEvent, Task>>();
+    private readonly IDictionary<string, Func<MoveEvent, Task>> MoveEvents = new Dictionary<string, Func<MoveEvent, Task>>();
 
     public async Task OnClick(Func<MouseEvent, Task> callback)
     {
@@ -54,6 +56,23 @@ public class Evented : JsReferenceBase
         await On(_contextMenuJsFunction, callback);
     }
 
+    public async Task OnMoveEnd(Func<MoveEvent, Task> callback)
+    {
+        if (this.MoveEvents.ContainsKey(_moveEndJsFunction))
+        {
+            return;
+        }
+
+        this.MoveEvents.Add(_moveEndJsFunction, callback);
+        await this.OnMoveEnd();
+    }
+
+    private async Task OnMoveEnd()
+    {
+        DotNetObjectReference<Evented> eventedClass = DotNetObjectReference.Create(this);
+        await this.EventedJsInterop!.OnCallback(eventedClass, this.JsReference, _moveEndJsFunction);
+    }
+
     private async Task On(string eventType, Func<MouseEvent, Task> callback)
     {
         if (this.MouseEvents.ContainsKey(eventType))
@@ -87,6 +106,16 @@ public class Evented : JsReferenceBase
         if (isEvented)
         {
             await callback!.Invoke(mouseEvent);
+        }
+    }
+
+    [JSInvokable]
+    public async Task OnMoveEndCallback(MoveEvent moveEvent)
+    {
+        bool isEvented = this.MoveEvents.TryGetValue(_moveEndJsFunction, out Func<MoveEvent, Task>? callback);
+        if (isEvented)
+        {
+            await callback!.Invoke(moveEvent);
         }
     }
 }

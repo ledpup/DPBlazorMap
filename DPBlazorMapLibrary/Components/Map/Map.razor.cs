@@ -63,6 +63,11 @@ public partial class Map
         return await MapReference!.InvokeAsync<LatLng>(getCenter);
     }
 
+    public async Task<LatLngBounds> GetBounds()
+    {
+        return await JsRuntime!.InvokeAsync<LatLngBounds>("dpMapInterop.getBounds", MapReference);
+    }
+
     public async Task<int> GetZoom()
     {
         return await MapReference!.InvokeAsync<int>(getZoom);
@@ -195,6 +200,11 @@ public partial class Map
     public async Task OnContextMenu(Func<MouseEvent, Task> callback)
     {
         await MapEvented!.OnContextMenu(callback);
+    }
+
+    public async Task OnMoveEnd(Func<MoveEvent, Task> callback)
+    {
+        await MapEvented!.OnMoveEnd(callback);
     }
 
     public async Task Off(string eventType)

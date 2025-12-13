@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <SignAssembly>False</SignAssembly>
@@ -12,7 +12,7 @@
     <Description>DP Blazor Map is a library for Blazer, which is a wrapper on top of the Leaflet js library.</Description>
     <PackageProjectUrl>https://github.com/ledpup/DPBlazorMap</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Version>1.2.2</Version>
+    <Version>1.2.3</Version>
     <PackageId>LPBlazorMapLibrary</PackageId>
   </PropertyGroup>
 
