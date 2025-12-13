@@ -6,10 +6,13 @@ public class LatLngBounds
     {
     }
 
-    public LatLngBounds(LatLng southwest, LatLng northeast)
+public record LatLngPair(LatLng center, LatLngBounds bounds, int zoom);
+
+
+    public LatLngBounds(LatLng southWest, LatLng northEast)
     {
-        SouthWest = southwest;
-        NorthEast = northeast;
+        SouthWest = southWest;
+        NorthEast = northEast;
     }
 
     public LatLng? SouthWest { get; set; }
@@ -17,6 +20,6 @@ public class LatLngBounds
 
     public IEnumerable<LatLng> ToLatLng()
     {
-        return new List<LatLng>() { SouthWest!, NorthEast! };
+        return [SouthWest!, NorthEast!];
     }
 }

@@ -63,6 +63,11 @@ public partial class Map
         return await MapReference!.InvokeAsync<LatLng>(getCenter);
     }
 
+    public async Task<LatLngBounds> GetBounds()
+    {
+        return await JsRuntime!.InvokeAsync<LatLngBounds>("dpMapInterop.getBounds", MapReference);
+    }
+
     public async Task<int> GetZoom()
     {
         return await MapReference!.InvokeAsync<int>(getZoom);
