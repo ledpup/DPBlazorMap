@@ -202,6 +202,11 @@ public partial class Map
         await MapEvented!.OnContextMenu(callback);
     }
 
+    public async Task OnMoveEnd(Func<MoveEvent, Task> callback)
+    {
+        await MapEvented!.OnMoveEnd(callback);
+    }
+
     public async Task Off(string eventType)
     {
         await MapEvented!.Off(eventType);

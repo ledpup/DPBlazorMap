@@ -12,7 +12,7 @@
     <Description>DP Blazor Map is a library for Blazer, which is a wrapper on top of the Leaflet js library.</Description>
     <PackageProjectUrl>https://github.com/ledpup/DPBlazorMap</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Version>1.2.9</Version>
+    <Version>1.2.3</Version>
     <PackageId>LPBlazorMapLibrary</PackageId>
   </PropertyGroup>
 
